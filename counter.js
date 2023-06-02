@@ -1,7 +1,7 @@
 const Counter = {
   data() {
     return {
-      count: 0,
+      count: parseInt(this.start),
     };
   },
   template: '{{time()}}Le compteur vaut : {{count}}, son double vaut : {{countX2}}',
@@ -26,6 +26,9 @@ const Counter = {
     countX2(){
       return 2 * this.count;
     }
-  }
+  },
+  props:[
+    "start"
+  ]
 };
 export default Counter;
