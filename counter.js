@@ -4,7 +4,7 @@ const Counter = {
       count: 0,
     };
   },
-  template: '{{time()}}Le compteur vaut : {{count}}',
+  template: '{{time()}}Le compteur vaut : {{count}}, son double vaut : {{countX2}}',
   created() {
     setInterval(() => {
       this.count += 1;
@@ -22,5 +22,10 @@ const Counter = {
       return '' + hour + ':' + min + ':' + sec + ' ';
     },
   },
+  computed : {
+    countX2(){
+      return 2 * this.count;
+    }
+  }
 };
 export default Counter;
